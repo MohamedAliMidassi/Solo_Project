@@ -1,0 +1,10 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<h2>Create Your Pizza</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Pizza</button>
+</form>
+{% endblock %}
