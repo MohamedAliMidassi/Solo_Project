@@ -25,7 +25,7 @@ SECRET_KEY = 'shhhhhhhhhh this is a secret dont tell noone , and dont even speak
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -44,7 +44,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates',  # Add this line to point to the global templates directory
+            BASE_DIR / 'templates', 
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -57,6 +57,7 @@ TEMPLATES = [
         },
     },
 ]
+APPEND_SLASH = False
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -70,21 +71,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'PizzaTime.urls'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
+
 
 WSGI_APPLICATION = 'PizzaTime.wsgi.application'
 

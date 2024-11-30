@@ -43,6 +43,7 @@ class Order(models.Model):
     is_completed = models.BooleanField(default=False)
     total_price = models.DecimalField(max_digits=6, decimal_places=2, default=0.0)
     created_at = models.DateTimeField(auto_now_add=True)
+    favorite = models.BooleanField(default=False)
 
     def calculate_total_price(self):
         self.total_price = sum(pizza.get_price() for pizza in self.pizzas.all())
